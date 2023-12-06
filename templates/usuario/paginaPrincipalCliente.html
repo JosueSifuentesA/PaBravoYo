@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Formulario</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.11/fullpage.css">
+	<link rel="stylesheet" th:href="@{/CSS/stylePaginaPrincipalCliente.css}">
+	
+	
+
+
+</head>
+
+<body>
+
+			<header>
+					<a href="#" class="logo"><img class="im" src="/imagenes/logo1.png"></a>
+					<nav>
+						<ul>
+							<li><a href="/paginaCliente">Inicio</a></li>
+							<li><a href="/formPedido">Ralizar un pedido</a></li>
+							<li><a href="/pedidos">Mis Pedidos</a></li>
+							<li> <a th:action="@{/logout}" class="dropdown-item" th:href="@{/usuario/iniciarSesion}">Cerrar sesión</a></li>
+						</ul>
+					</nav>
+				</header>
+				
+					
+				<section class="zona1">
+				 <div class="covertext">
+					<div class="col-lg-10" style="float:none; margin:0 auto;">
+			      		<h2 class="title">BIENVENIDO A NUESTRA CEVICHERIA</h2>
+			      		<h1 class="subtitle">"PA BRAVO YO"</h1>
+			   		 </div>
+			   	 </div>
+				</section>
+		    
+		    
+
+		<section class="tab-content">
+			<div class="container">
+				<!-- Tab Content 1 -->
+				<div id="tab-1-content" class="tab-content-item show">
+				<center><h1 class="ini_cli_h1"><font color="#3878B8">REVISA NUESTRAS PROMOCIONES </h1></center>
+				<br>
+						<div>
+							<div class="slider">
+							<input type="radio" name="testimonial" id="t-1">
+							<input type="radio" name="testimonial" id="t-2">
+							<input type="radio" name="testimonial" id="t-3" checked>
+							<input type="radio" name="testimonial" id="t-4">
+							<input type="radio" name="testimonial" id="t-5">
+							<div class="testimonials">
+								<label class="item1" for="t-1">
+								</label>
+								<label class="item2" for="t-2">
+								</label>
+								<label class="item3" for="t-3">
+								</label>
+								<label class="item4" for="t-4">
+								</label>
+								<label class="item5" for="t-5">
+								</label>
+							</div>
+							<div class="dots">
+								<label for="t-1"></label>
+								<label for="t-2"></label>
+								<label for="t-3"></label>
+								<label for="t-4"></label>
+								<label for="t-5"></label>
+							</div>
+						</div>
+						</div>
+					</div>
+				</div>
+		</section>
+	    
+	    
+	    
+	   
+				
+				
+	    
+	    
+	    
+	    
+	    <section class="carta_platos">
+	   
+	   		<div class="contenedor_imagen">
+	   		 <center><h1 class="car_cli_h1"><font color="#3878B8">PLATOS</h1></center>
+	   			<img class="imagen" src="/imagenes/Carta.jpg">
+	   		</div>
+	   </section>
+	    
+	   <section class="carta_bebidas">
+	   		<div class="contenedor_imagen">
+	   		<center><h1 class="car_cli_h1"><font color="#3878B8">BEBIDAS</h1></center>
+	   			<img class="imagen" src="/imagenes/carta2.jpg">
+	   		</div>
+	   </section>
+	    
+	    <br><br><br><br><br><br><br>
+		       <footer class="pie-pagina">
+		        <div class="grupo-1">
+		            <div class="box">
+		                <figure>
+		                    <a href="#">
+		                        <img class="im-fo" src="/imagenes/PaBravoYo.png" alt="Logo de SLee Dw">
+		                    </a>
+		                </figure>
+		            </div>
+		            <div class="box">
+		                <h2>SOBRE NOSOTROS</h2>
+		                <p>Pa Bravo Yo cuenta con 10 años de experiencia en preparación de platos marinos así como platos emblemáticos 
+		                de nuestro rico Perú: Ceviche, Parihuela, Sudado, Arroz con Mariscos, Combinado de Pescado, Pulpo</p>
+		                
+		            </div>
+		            <div class="box">
+		                <h2>SIGUENOS</h2>
+		                <div class="red-social">
+		          
+		                    <a href="https://es-la.facebook.com/pabravoy/" class="fa fa-facebook"><ion-icon name="logo-facebook" class="tamaño"></ion-icon></a>
+		                    <a href="https://instagram.com/pabravoyo80?igshid=YmMyMTA2M2Y=" class="fa fa-instagram"><ion-icon name="logo-instagram" class="tamaño"></ion-icon></a>
+		                    <a href="https://twitter.com/PaBravo_Yo?t=KPUtZDyvUmu2pefTFXZraA&s=09" class="fa fa-twitter"><ion-icon name="logo-twitter" class="tamaño"></ion-icon></a>
+		     
+		                </div>
+		            </div>
+		        </div>
+		        <div class="grupo-2">
+		            <small>&copy; 2021 <b>SLee Dw</b> - Todos los Derechos Reservados.</small>
+		        </div>
+		    </footer>
+ <script type="text/javascript">
+		window.addEventListener("scroll", function(){
+			var header = document.querySelector("header");
+			header.classList.toggle("abajo",window.scrollY>0);
+		})
+	</script>
+	
+	
+ 	 <script src="../js/reserva_mesa.js"></script>
+ 	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+	
+	
+	
+
+
+</body>

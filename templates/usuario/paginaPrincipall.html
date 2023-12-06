@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+
+<title>PA BRAVO YO</title>
+<link rel="stylesheet" th:href="@{/CSS/paginaPrincipall.css}"></link>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" />
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link
+	href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;600;700&display=swap"
+	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;600&family=Ramaraja&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+<script src="https://kit.fontawesome.com/67c824d10f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header class="showcase">
+			<div class="showcase-top">
+			
+				<img th:src="@{/imagenes/logo1.png}" alt="" />
+				<a th:href="@{/usuario/registro}" style="background-color: #3790D1;" class="btn btn-rounded"><FONT COLOR='WHITE'>REGISTRARSE</a>
+			</div>
+			<div class="showcase-content">
+				<h1>BIENVENIDO A LA CEVICHERIA</h1>
+				<p>PA BRAVO YO</p>
+				<a th:href="@{/usuario/iniciarSesion}" style="background-color: #3790D1;" class="btn btn-xl"><FONT COLOR='WHITE'>INICIAR SESIÓN <i class="fas fa-chevron-right btn-icon"></i
+				></a>
+			</div>
+		</header>
+		<section class="tabs">
+			<div class="container">
+				<div id="tab-1" class="tab-item tab-border">
+					<i class="fas fa-door-open fa-3x"></i>
+					<p class="hide-sm">BIENVENIDO</p>
+				</div>
+				<div id="tab-2" class="tab-item">
+					<i class="fas fa-tags fa-3x" ></i>
+					<p class="hide-sm">SOBRE NOSOTROS</p>
+				</div>
+				<div id="tab-3" class="tab-item">
+					<i class="fas fa-tablet-alt fa-3x"></i>
+					<p class="hide-sm">CONTÁCTANOS</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="tab-content">
+			<div class="container">
+				<!-- Tab Content 1 -->
+				<div id="tab-1-content" class="tab-content-item show">
+				<center><h1><font color="#3878B8">REVISA NUESTRAS PROMOCIONES </h1></center>
+				<br>
+						<div>
+							<div class="slider">
+							<input type="radio" name="testimonial" id="t-1">
+							<input type="radio" name="testimonial" id="t-2">
+							<input type="radio" name="testimonial" id="t-3" checked>
+							<input type="radio" name="testimonial" id="t-4">
+							<input type="radio" name="testimonial" id="t-5">
+							<div class="testimonials">
+								<label class="item1" for="t-1">
+								</label>
+								<label class="item2" for="t-2">
+								</label>
+								<label class="item3" for="t-3">
+								</label>
+								<label class="item4" for="t-4">
+								</label>
+								<label class="item5" for="t-5">
+								</label>
+							</div>
+							<div class="dots">
+								<label for="t-1"></label>
+								<label for="t-2"></label>
+								<label for="t-3"></label>
+								<label for="t-4"></label>
+								<label for="t-5"></label>
+							</div>
+						</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Tab Content 2 -->
+				<div id="tab-2-content" class="tab-content-item">
+					<div class="tab-2-content-top">
+					<CENTER><h1><FONT COLOR="BLACK">SOBRE NOSOTROS</h1></CENTER>
+					</div>
+					<div class="tab-2-content-bottom">
+						<div>
+							  <img th:src="@{/imagenes/card1.png}" class="card-img-top" width="400px" height="400px" alt="...">
+							  <div class="card-body">
+							    <p class="text-md">La cevicheria Pa Bravo Yo le da la bienvenida a nuestra página web 
+							    donde podrá conocer un poco de la empresa así como sus exquisitos platos. Nuestra cevicheria se 
+							    caracteriza por brindar un servicio de calidad, con platos innovadores, trato cariñoso y personalizado 
+							    para todos nuestros clientes.
+								El objetivo de nuestra web, es presentar nuestras promociones, 
+								que todos nuestros clientes conozcan todos los platos que tiene nuestra amplia carta y puedan 
+								realizar sus compras a través de nuestra e-commerce diseñada para realizar delivery desde 
+								la comodidad de su hogar así como generar sus reservas para cumpleaños o alguna ocasión especial.</p>
+							  </div>
+							</div>
+						<div>
+							<img th:src="@{/imagenes/card2.png}" class="card-img-top" width="400px" height="400px" alt="" />
+							<p class="text-md">
+								Pa Bravo Yo cuenta con 10 años de experiencia en preparación de platos marinos así como platos emblemáticos de nuestro rico Perú: 
+								Ceviche, Parihuela, Sudado, Arroz con Mariscos, Combinado de Pescado, Pulpo a la Parrilla, Parrilla Marina, Chita al ajo Crocante,
+								 Lenguado a la Florentina, nuestro infaltable Lomo Saltado a base de Lomo fino, etc.
+
+			
+							</p>
+						</div>
+						<div>
+							<img th:src="@{/imagenes/card3.png}" class="card-img-top" width="400px" height="400px" alt="...">
+							<p class="text-md">
+								Siempre agradecidos por la riqueza de nuestro mar peruano y nuestro ají limo podemos innovar en diferentes 
+								platos con insumos de nuestras tres regiones costa, sierra y selva, platos como una causa fusión, 
+								aeropuerto mar y tierra deleitaran tu paladar.
+							</p>
+						</div>
+					</div>
+				</div>
+
+
+				<!-- Tab Content 3 -->
+				<div id="tab-3-content" class="tab-content-item">
+					  <div class="home jumbotron text-center">
+					    <a name="home"></a>
+					    <div class="home-color1 row">
+					      <h1>ENCUENTRANOS EN NUESTRAS REDES!</h1>
+					
+					      <div class="home-social">
+					        <a href="https://codepen.io/Rodrigoelefante/" alt="codepen" target="_blank"><i class="fa fa-codepen"></i></a>
+					        <a href="https://www.facebook.com/rodrigo.guerreromartin" alt="Facebook" target="_blank"><i class="fa fa-facebook-official"></i></a>
+					        <a href="https://twitter.com/RodrigoGue13" alt="Twitter" target="_blank"><i class="fa fa-twitter-square"></i></a>
+					        <a href="https://www.linkedin.com/in/rodrigo-guerrero-mart%C3%ADn-1aa4219a?trk=nav_responsive_tab_profile" alt="Linkedin" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+					
+					      </div>
+					    </div>
+					  </div>
+
+			</div>
+		</section>
+
+		<footer class="pie-pagina">
+		        <div class="grupo-1">
+		            <div class="box">
+		                <figure>
+		                    <a href="#">
+		                        <img class="im-fo" src="/imagenes/PaBravoYo.png" alt="Logo de SLee Dw">
+		                    </a>
+		                </figure>
+		            </div>
+		            <div class="box">
+		                <h2>SOBRE NOSOTROS</h2>
+		                <p>Pa Bravo Yo cuenta con 10 años de experiencia en preparación de platos marinos así como platos emblemáticos 
+		                de nuestro rico Perú: Ceviche, Parihuela, Sudado, Arroz con Mariscos, Combinado de Pescado, Pulpo</p>
+		                
+		            </div>
+		            <div class="box">
+		                <h2>SIGUENOS</h2>
+		                <div class="red-social">
+		          
+		                    <a href="https://es-la.facebook.com/pabravoy/" class="fa fa-facebook"><ion-icon name="logo-facebook" class="tamaño"></ion-icon></a>
+		                    <a href="https://instagram.com/pabravoyo80?igshid=YmMyMTA2M2Y=" class="fa fa-instagram"><ion-icon name="logo-instagram" class="tamaño"></ion-icon></a>
+		                    <a href="https://twitter.com/PaBravo_Yo?t=KPUtZDyvUmu2pefTFXZraA&s=09" class="fa fa-twitter"><ion-icon name="logo-twitter" class="tamaño"></ion-icon></a>
+		     
+		                </div>
+		            </div>
+		        </div>
+		        <div class="grupo-2">
+		            <small>&copy; 2021 <b>SLee Dw</b> - Todos los Derechos Reservados.</small>
+		        </div>
+		    </footer>
+		
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+   <script src="/js/paginaPrincipal.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js" integrity="sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI=" crossorigin="anonymous"></script>
+        
+</body>
+
+</html>

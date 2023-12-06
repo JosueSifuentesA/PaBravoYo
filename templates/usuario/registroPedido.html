@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Formulario</title>
+	<link rel="stylesheet" th:href="@{/CSS/stylePaginaPrincipalCliente.css}">
+</head>
+
+<body>
+
+
+			<header>
+					<a href="#" class="logo"><img class="im" src="/imagenes/logo1.png"></a>
+					<nav>
+						<ul>
+							<li><a href="/paginaCliente">Inicio</a></li>
+							<li><a href="/formPedido">Realizar un pedido</a></li>
+							<li><a href="/pedidos">Mis Pedidos</a></li>
+							<li> <a th:action="@{/logout}" class="dropdown-item" th:href="@{/usuario/iniciarSesion}">Cerrar sesión</a></li>
+						</ul>
+					</nav>
+				</header>
+				
+					<section class="espacio"></section>
+			
+				
+				<section>
+				<div class="from-reserva">
+					<div class="marquito">
+		        	<center><h2>REALIZA UN NUEVO PEDIDO!</h2></center><br>
+		        	<h3>Verifique que sus datos esten ingresados correctamente</h3><br>
+		      		<form id="formulario" th:action="@{/recibirData}"  method="get" th:object="${pedido}">
+							
+							<h3>-----------------------------------------</h3><br>
+							<center><h3>INGRESE EL TIPO DE ENTREGA</h3></center><br>
+							<select th:field="*{tipoEntrega}" class="controls" name="select">
+								  <option  th:each="entrega:${entregas}"
+								  th:value="${entrega.id}"
+								  th:text="${entrega.descripcion}"
+								  /> 
+							</select>
+							
+							<center><h3>DELIVERY - REGISTRE LOS SIGUIENTES DATOS</h3></center><br>
+							<center><h3>INGRESE SU DIRECCIÓN</h3></center><br>
+							<input class="controls" placeholder="Direccion" type="text"
+							name="direccion" id="direccion"> 
+							
+							<center><h3>INGRESE UNA REFERENCIA</h3></center><br>
+							<input class="controls"
+							placeholder="Agrega una referencia" type="text"
+							name="referencias" id="referencias">
+							
+							<center><h3>RECOJO EN TIENDA - ELIJA UN LOCAL</h3></center><br>
+							<select th:field="*{tipoLocal}" class="controls" name="select">
+							   <option  th:each="local:${locales}"
+								  th:value="${local.id}"
+								  th:text="${local.descripcion}"
+								  /> 
+							</select>
+							<center><h3>ELIJA UN TIPO DE PAGO</h3></center><br>
+					        <select th:field="*{tipoPago}" class="controls" name="select">
+							   <option  th:each="pago:${pagos}"
+								  th:value="${pago.id}"
+								  th:text="${pago.descripcion}"
+								  /> 
+							</select>
+
+
+							<input class="boton" type="submit"  id="botton" value="PEDIR"  onclick="val_redirect()"/>
+					</form>
+					</div>
+		      </div>
+		  
+		    </section><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		    <footer class="section pie-pagina">
+		        <div class="grupo-1">
+		            <div class="box">
+		                <figure>
+		                    <a href="#">
+		                        <img class="im-fo" src="/imagenes/PaBravoYo.png" alt="Logo de SLee Dw">
+		                    </a>
+		                </figure>
+		            </div>
+		            <div class="box">
+		                <h2>SOBRE NOSOTROS</h2>
+		                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, ipsa?</p>
+		                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, ipsa?</p>
+		            </div>
+		            <div class="box">
+		                <h2>SIGUENOS</h2>
+		                <div class="red-social">
+		          
+		                    <a href="https://es-la.facebook.com/pabravoy/" class="fa fa-facebook"><ion-icon name="logo-facebook" class="tamaño"></ion-icon></a>
+		                    <a href="https://instagram.com/pabravoyo80?igshid=YmMyMTA2M2Y=" class="fa fa-instagram"><ion-icon name="logo-instagram" class="tamaño"></ion-icon></a>
+		                    <a href="https://twitter.com/PaBravo_Yo?t=KPUtZDyvUmu2pefTFXZraA&s=09" class="fa fa-twitter"><ion-icon name="logo-twitter" class="tamaño"></ion-icon></a>
+		     
+		                </div>
+		            </div>
+		        </div>
+		        <div class="grupo-2">
+		            <small>&copy; 2021 <b>SLee Dw</b> - Todos los Derechos Reservados.</small>
+		        </div>
+		    </footer>
+ <script type="text/javascript">
+		window.addEventListener("scroll", function(){
+			var header = document.querySelector("header");
+			header.classList.toggle("abajo",window.scrollY>0);
+		})
+	</script>
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+ 	 <script src="../js/reserva_mesa.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Styles -->
+    <link rel="stylesheet" th:href="@{/CSS/stylePaginaPrincipalAdministrador.css}"></link>
+
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,700&display=swap" rel="stylesheet">
+
+    <!-- Ionic icons -->
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+
+    <title>Pagina Principal Administrador</title>
+</head>
+
+<body>
+    <div class="d-flex" id="content-wrapper">
+        <!-- Sidebar -->
+            <div div class="area">
+            
+			<nav class="main-menu">
+            	<ul>
+                <li>
+                    <a href="administrador">
+                        <i class="fa fa-home fa-2x"></i>
+                        <span class="nav-text">
+                            INICIO
+                        </span>
+                    </a>
+                  
+                </li>
+
+                </li>
+                <li class="has-subnav">
+                    <a th:href="@{/platos}">
+                       <i class="fa fa-table fa-2x"></i>
+                        <span class="nav-text">
+                            GESTIONAR CLIENTE
+                        </span>
+                    </a>
+                    
+                </li>
+                
+                <li class="has-subnav">
+                    <a th:href="@{/platos}">
+                       <i class="fa fa-table fa-2x"></i>
+                        <span class="nav-text">
+                            GESTIONAR PEDIDOS
+                        </span>
+                    </a>
+                    
+                </li>
+                
+                <li class="has-subnav">
+                    <a th:href="@{/platos}">
+                       <i class="fa fa-table fa-2x"></i>
+                        <span class="nav-text">
+                            LISTAR PLATOS
+                        </span>
+                    </a>
+                    
+                </li>
+                
+                <li class="has-subnav">
+                    <a th:href="@{/categoria}">
+                       <i class="fa fa-table fa-2x"></i>
+                        <span class="nav-text">
+                            LISTAR CATEGORIAS PLATOS
+                        </span>
+                    </a>
+                    
+                </li>
+                
+                <li class="has-subnav">
+                    <a th:href="@{/entrega}">
+                       <i class="fa fa-table fa-2x"></i>
+                        <span class="nav-text">
+                            LISTAR TIPOS DE ENTREGA
+                        </span>
+                    </a>
+                    
+                </li>
+                <li class="has-subnav">
+                    <a th:href="@{/local}">
+                       <i class="fa fa-table fa-2x"></i>
+                        <span class="nav-text">
+                            LISTAR LOCALES
+                        </span>
+                    </a>
+                    
+                </li>
+                <li class="has-subnav">
+                    <a th:href="@{/pago}">
+                       <i class="fa fa-table fa-2x"></i>
+                        <span class="nav-text">
+                            LISTAR TIPOS PAGO
+                        </span>
+                    </a>
+                    
+                </li>
+            </ul>
+
+            <ul class="logout">
+                <li>
+                   <a  th:href="@{/usuario/iniciarSesion}">
+                         <i class="fa fa-power-off fa-2x"></i>
+                        <span class="nav-text">
+                            Salir
+                        </span>
+                    </a>
+                </li>  
+            </ul>
+        </nav>
+       </div>
+        </div>
+        </div>
+        <!-- Fin sidebar -->
+
+        <div class="w-100">
+
+         <!-- Navbar -->
+         <nav class="navbar navbar-expand-lg border-bottom">
+            <div class="container">
+    			<a class="navbar-brand" th:href="@{/administrador}"><img th:src="@{/imagenes/logo1.png}"></a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+    
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                  <li class="nav-item dropdown">
+                    <a class="nav-link text-dark dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <img th:src="@{/imagenes/fotoadmin.png}"  class="img-fluid rounded-circle avatar mr-2">
+                      <alt="https://generated.photos/" /><FONT color="white">
+                    ADMIN
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                      
+                      <div class="dropdown-divider"></div>
+                      <a th:action="@{/logout}" class="dropdown-item" th:href="@{/usuario/iniciarSesion}">Cerrar sesión</a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <!-- Fin Navbar -->
+          
+	
+	
+	<div class="container py-4">
+		<div class="card bg-light">
+			<center><h1 class="font-weight-bold mb-0"><FONT color="#2D4E70">DETALLE DEL PEDIDO</h1></center>
+			<div class="card-body">
+				
+				<ul class="list-group">
+					<td><font color="black">FECHA DE REGISTRO</td>
+					<li class="list-group-item" th:text="${pedido.fecha}"></li>
+					<td>NOMBRES Y APPELIDOS DEL CLIENTE:</td>
+					<li class="list-group-item" th:text="${usuarios.nombre} + ' '+${usuarios.apellidoPat} + ' '
+					+ ${usuarios.apellidoMat}"></li>
+					<td>CELULAR:</td>
+					<li class="list-group-item" th:text="${usuarios.celular}"></li>
+					
+					
+					<td>TIPO DE ENTREGA:</td>
+					<li class="list-group-item" th:text="${pedido.tipoEntrega.descripcion}"></li>
+					
+					<tr th:each="p:${pedido}">
+						<td>DIRECCION Y REFERENCIA</td>
+						<li class="list-group-item" th:text="${p.direccion}+ ' '+${p.referencias}"></li>
+						
+					</tr>
+					
+					<td>RESTAURANTE ENTREGA PEDIDO:</td>
+					<li class="list-group-item" th:text="${pedido.tipoLocal.descripcion}"></li>
+					
+					<tr th:each="detalle:${detalles}">
+					<td>PLATOS ELEGIDOS:</td>
+					<li class="list-group-item" th:text="${detalle.nombre}"></li>
+					<td>CANTIDAD:</td>
+					<li class="list-group-item" th:text="${detalle.cantidad}"></li>
+					</tr>
+					<td>TOTAL:</td>
+					<li class="list-group-item" th:text="${pedido.total}"></li>
+					<td>TIPO PAGO:</td>
+					<li class="list-group-item" th:text="${pedido.tipoPago.descripcion}"></li>
+				</ul>
+	
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>

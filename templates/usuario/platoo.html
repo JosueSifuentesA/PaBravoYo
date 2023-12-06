@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Formulario</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.11/fullpage.css">
+	<link rel="stylesheet" th:href="@{/CSS/stylePlatoo.css}">
+	
+	
+
+
+</head>
+
+<body>
+
+			<header>
+					<a href="#" class="logo"><img class="im" src="/imagenes/logo1.png"></a>
+					<nav>
+						<ul>
+							<li><a href="/paginaCliente">Inicio</a></li>
+							<li><a href="/plato">Ralizar un pedido</a></li>
+							<li><a href="/listarReservas">Reservas</a></li>
+							<li> <a th:action="@{/logout}" class="dropdown-item" th:href="@{/usuario/iniciarSesion}">Cerrar sesión</a></li>
+						</ul>
+					</nav>
+				</header>
+				
+					
+				<section class="zona1">
+				 <div class="covertext">
+					<div class="col-lg-10" style="float:none; margin:0 auto;">
+			      		<h2 class="title">BIENVENIDO A NUESTRA CEVICHERIA</h2>
+			      		<h1 class="subtitle">"PA BRAVO YO"</h1>
+			   		 </div>
+			   	 </div>
+				</section>
+		    
+	<div class="container">
+		<!-- Page Features -->
+		<div class="row text-center">
+
+			<div class="col-lg-3 col-md-6 mb-4" th:each="plato:${platos}">
+				<div class="card h-100"
+					style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.7); padding: 0">
+					<img style="width: 300px; height: 200px" class="img-fluid"
+						th:src="@{/images/{img} (img=${plato.imagen})}" alt="">
+					<div class="card-body">
+						<p class="card-text text-dark" th:text="${plato.nombre}"></p>
+					</div>
+					<div class="card-footer">
+						<a th:href="@{/platoHome/{id} (id=${plato.id}) }"
+							class="btn btn-success">SELECCIONAR</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /.row -->
+
+	</div>
+
+	    
+		       <footer class="pie-pagina">
+		        <div class="grupo-1">
+		            <div class="box">
+		                <figure>
+		                    <a href="#">
+		                        <img class="im-fo" src="/imagenes/PaBravoYo.png" alt="Logo de SLee Dw">
+		                    </a>
+		                </figure>
+		            </div>
+		            <div class="box">
+		                <h2>SOBRE NOSOTROS</h2>
+		                <p>Pa Bravo Yo cuenta con 10 años de experiencia en preparación de platos marinos así como platos emblemáticos 
+		                de nuestro rico Perú: Ceviche, Parihuela, Sudado, Arroz con Mariscos, Combinado de Pescado, Pulpo</p>
+		                
+		            </div>
+		            <div class="box">
+		                <h2>SIGUENOS</h2>
+		                <div class="red-social">
+		          
+		                    <a href="https://es-la.facebook.com/pabravoy/" class="fa fa-facebook"><ion-icon name="logo-facebook" class="tamaño"></ion-icon></a>
+		                    <a href="https://instagram.com/pabravoyo80?igshid=YmMyMTA2M2Y=" class="fa fa-instagram"><ion-icon name="logo-instagram" class="tamaño"></ion-icon></a>
+		                    <a href="https://twitter.com/PaBravo_Yo?t=KPUtZDyvUmu2pefTFXZraA&s=09" class="fa fa-twitter"><ion-icon name="logo-twitter" class="tamaño"></ion-icon></a>
+		     
+		                </div>
+		            </div>
+		        </div>
+		        <div class="grupo-2">
+		            <small>&copy; 2021 <b>SLee Dw</b> - Todos los Derechos Reservados.</small>
+		        </div>
+		    </footer>
+ <script type="text/javascript">
+		window.addEventListener("scroll", function(){
+			var header = document.querySelector("header");
+			header.classList.toggle("abajo",window.scrollY>0);
+		})
+	</script>
+	
+	
+ 	 <script src="../js/reserva_mesa.js"></script>
+ 	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+	
+	
+	
+
+
+</body>
